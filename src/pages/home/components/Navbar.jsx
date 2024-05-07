@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function Navbar() {
   return (
     <>
@@ -11,9 +11,11 @@ function Navbar() {
                     </svg>
                 </div>
                 <div className='flex space-x-3'>
-                    <div className='border-[1px] py-4 px-6 rounded-[30px] cursor-pointer hover:bg-[#F1F1F1]'>
-                        Get Projects
-                    </div>
+                    <Link to = "/get-project">
+                        <div className='border-[1px] py-4 px-6 rounded-[30px] cursor-pointer hover:bg-[#F1F1F1]'>
+                            Get Projects
+                        </div>
+                    </Link>
                     <div className='border-[1px] py-4 px-6 rounded-[30px] text-[#ffffff] bg-[#000000] hover:bg-[#4E4E4E] cursor-pointer'>
                         Onboard Talent
                     </div>

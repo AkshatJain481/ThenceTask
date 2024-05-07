@@ -1,19 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Navbar from './components/Navbar'
-import GirlImage from '../Images/girl.png';
-import ArrowImage from '../Images/arrow.png';
+import GirlImage from '../../Images/girl.png';
+import ArrowImage from '../../Images/arrow.png';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 function Home() {
+    const sliderRef = useRef(null);
+        const [currentSlide, setCurrentSlide] = useState(0);
+
+    const goToSlide = index => {
+        sliderRef.current.slickGoTo(index);
+    };
+
     
+    const settings = {
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true, 
+            autoplaySpeed: 3000,
+            afterChange: (index) => setCurrentSlide(index) 
+
+        };
     const [svg1,Setsvg1] = useState(true);
     const [svg2,Setsvg2] = useState(true);
     const [svg3,Setsvg3] = useState(true);
     const [svg4,Setsvg4] = useState(true);
     const [svg5,Setsvg5] = useState(true);
 
-
+    
 
   return (
     <>
+    
     
     <div className='mx-[20px]'>  
         <Navbar/> 
@@ -108,18 +130,29 @@ function Home() {
             </div> 
 
             <div className='font-manrope text-[40px] font-semibold max-w-[400px] leading-tight ml-[190px] mt-[180px] z-10 '>
-            Enhance fortune 50 company&apos;s insights teams research capabilities
+                <Slider {...settings} ref={sliderRef}>
+                <div>
+                Enhance fortune 50 company&apos;s insights teams research capabilities
+                </div>
+                <div>
+                Enhance fortune 50 company&apos;s insights teams research capabilities
+                </div>
+                <div>
+                Enhance fortune 50 company&apos;s insights teams research capabilities
+                </div>
+                </Slider>
                 <div className='flex space-x-3 mt-[50px]'>
-                    <div className='h-[10px] w-[10px] rounded-full bg-[#2DA950] cursor-pointer'>
+                    <div className={`h-[10px] w-[10px] rounded-full  cursor-pointer ${currentSlide === 0 ? "bg-[#2DA950]" : "bg-[#E4E3E3] hover:bg-[#CAD0CB]"}`} onClick={() => goToSlide(0)}>
                     </div>
 
-                    <div className='h-[10px] w-[10px] rounded-full bg-[#E4E3E3] hover:bg-[#CAD0CB] cursor-pointer'>
+                    <div className={`h-[10px] w-[10px] rounded-full  cursor-pointer ${currentSlide === 1 ? "bg-[#2DA950]" : "bg-[#E4E3E3] hover:bg-[#CAD0CB]"}`} onClick={() => goToSlide(1)}>
                     </div>
 
-                    <div className='h-[10px] w-[10px] rounded-full bg-[#E4E3E3] hover:bg-[#CAD0CB] cursor-pointer'>
+                    <div className={`h-[10px] w-[10px] rounded-full  cursor-pointer ${currentSlide === 2 ? "bg-[#2DA950]" : "bg-[#E4E3E3] hover:bg-[#CAD0CB]"}`} onClick={() => goToSlide(2)}>
                     </div>
 
                 </div>
+
                 <div className='px-10 mt-[120px] border-[1px] text-[#ffffff] bg-[#000000] hover:bg-[#4E4E4E] cursor-pointer flex text-[20px] max-w-[250px] py-8 rounded-full'>
                         Explore More
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className='mt-[5px] ml-[20px]'>
@@ -260,10 +293,10 @@ function Home() {
                 &nbsp;&nbsp;&nbsp;&nbsp;Talup 2023. All rights reserved
             </div>
             <div className='flex font-normal space-x-12'>
-                <div className='underline	text-[#1C1C1C]'>
+                <div className='underline	text-[#1C1C1C] cursor-pointer'>
                 Terms & Conditions
                 </div>
-                <div className='underline	text-[#1C1C1C]'>
+                <div className='underline	text-[#1C1C1C] cursor-pointer'>
                 Privacy Policy
                 </div>
             </div>
@@ -274,4 +307,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;

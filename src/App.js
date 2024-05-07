@@ -1,12 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from "./home/Home";
-
+import Home from "./pages/home/Home";
+import GetProject from "./pages/getProject/GetProject";
 function App() {
   return (
     <Router>
       <Routes>
-      <Route exact path="/" element = {<Home/>} />
+      <Route  index element = {<Home/>} />
+      <Route  path="/get-project" element = {<GetProject/>} />
+      
+
     </Routes>
   </Router>
   );
