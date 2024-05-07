@@ -6,6 +6,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `Fork and Clone the Repo in your local system`
+
+git clone custom-url
+
+### `Navigate to your project where you have cloned it in your system`
+
+cd path/to/project
+
+### `npm install`
+
+Run 'npm install' in the terminal to install the all the necessary node_modules
+
 ### `npm start`
 
 Runs the app in the development mode.\
