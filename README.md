@@ -7,17 +7,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 https://thence-task-ashy.vercel.app/
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `Fork and Clone the Repo in your local system`
+## `Fork and Clone the Repo in your local system`
 
 git clone custom-url
 
-### `Navigate to your project where you have cloned it in your system`
+## `Navigate to your project where you have cloned it in your system`
 
 cd path/to/project
+
+## To run the Project
+
+In the project directory, you can run:
 
 ### `npm install`
 
