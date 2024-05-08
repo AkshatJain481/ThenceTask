@@ -5,15 +5,17 @@ import ArrowImage from '../../Images/arrow.png';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import FAQs from './components/FAQs';
+
 function Home() {
-    const sliderRef = useRef(null);
+    const sliderRef = useRef(null); 
         const [currentSlide, setCurrentSlide] = useState(0);
 
-    const goToSlide = index => {
+    const goToSlide = (index) => {
         sliderRef.current.slickGoTo(index);
     };
 
-    
+    // Slider Settings
     const settings = {
             dots: false,
             infinite: true,
@@ -25,11 +27,8 @@ function Home() {
             afterChange: (index) => setCurrentSlide(index) 
 
         };
-    const [svg1,Setsvg1] = useState(true);
-    const [svg2,Setsvg2] = useState(true);
-    const [svg3,Setsvg3] = useState(true);
-    const [svg4,Setsvg4] = useState(true);
-    const [svg5,Setsvg5] = useState(true);
+
+   
 
     
 
@@ -164,7 +163,7 @@ function Home() {
 
         </div>
 
-        <div className='bg-[#E8EEE7]  mt-[250px] rounded-[40px] flex mb-[50px]'>
+        <div className='bg-[#E8EEE7]  mt-[250px] rounded-[40px] flex mb-[50px] pb-[20px]'>
             <div className=''>
                 <div className='font-manrope font-bold text-[60px] ml-[100px] mt-[100px]'>
                     <div className='text-[32px] font-normal font-covered-by-your-grace text-[#9E9D9D]'>
@@ -176,112 +175,15 @@ function Home() {
             </div>
             <div className='ml-[250px] text-[30px] text-manrope font-semibold w-[700px] pr-[100px] mt-[160px]'>
                 
-                
-                <div className='border-[#D7D7D7] border-b-2'>
-                    <div className=' flex justify-between	pb-4 mt-[30px] b'>
-                        <div className='max-w-[550px]'>
-                        Do you offer freelancers?                 
-                        </div>
-                    
-                        <div className='flex items-center cursor-pointer' onClick={() =>{svg1 ? Setsvg1(false) : Setsvg1(true)}} >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d={ svg1 ? "M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" 
-                                        : "M5 11V13H19V11H5Z"
-                                        } fill="black"  />
-                        </svg>
-                        </div>
-                        
-                    </div>
-                    <div className={ svg1 ? 'font-manrope text-[15px] font-normal text-[#617275] py-6 hidden'
-                                        :   'font-manrope text-[15px] font-normal text-[#617275] py-6 '}>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, minus. Cupiditate porro repellat, impedit unde architecto officia aspernatur aliquid sequi tenetur rem itaque eius delectus blanditiis voluptatum eligendi mollitia quisquam?
-                    </div>
-                </div>
+                <FAQs question={'Do you offer freelancers?'} answer={"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, minus. Cupiditate porro repellat, impedit unde architecto officia aspernatur aliquid sequi tenetur rem itaque eius delectus blanditiis voluptatum eligendi mollitia quisquam?"} />
 
-               
-                <div className='border-[#D7D7D7] border-b-2'>
-                    <div className=' flex justify-between	pb-4 mt-[30px] b'>
-                        <div className='max-w-[550px]'>
-                        What&apos;s the guarantee that I will be satisfied
-                        with the hired talent?
-                        </div>
-                    
-                        <div className='flex items-center cursor-pointer' onClick={() =>{svg2 ? Setsvg2(false) : Setsvg2(true)}} >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d={ svg2 ? "M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" 
-                                        : "M5 11V13H19V11H5Z"
-                                        } fill="black"  />
-                        </svg>
-                        </div>
-                        
-                    </div>
-                    <div className={ svg2 ? 'font-manrope text-[15px] font-normal text-[#617275] py-6 hidden'
-                                        :   'font-manrope text-[15px] font-normal text-[#617275] py-6 '}>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, minus. Cupiditate porro repellat, impedit unde architecto officia aspernatur aliquid sequi tenetur rem itaque eius delectus blanditiis voluptatum eligendi mollitia quisquam?
-                    </div>
-                </div>
-                <div className='border-[#D7D7D7] border-b-2'>
-                    <div className=' flex justify-between	pb-4 mt-[30px] b'>
-                        <div className='max-w-[550px]'>
-                        Can I hire multiple talents at once?                   
-                        </div>
-                    
-                        <div className='flex items-center cursor-pointer' onClick={() =>{svg3 ? Setsvg3(false) : Setsvg3(true)}} >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d={ svg3 ? "M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" 
-                                        : "M5 11V13H19V11H5Z"
-                                        } fill="black"  />
-                        </svg>
-                        </div>
-                        
-                    </div>
-                    <div className={ svg3 ? 'font-manrope text-[15px] font-normal text-[#617275] py-6 hidden'
-                                        :   'font-manrope text-[15px] font-normal text-[#617275] py-6 '}>
-                    If unhappy with a project, communicate with the freelancer, allow for revisions, and refer to the agreement. Escalate to platform support if needed, considering mediation. Review policies, seek collaborative solutions for resolution.
-                    </div>
-                </div>
-                <div className='border-[#D7D7D7] border-b-2'>
-                    <div className=' flex justify-between	pb-4 mt-[30px] b'>
-                        <div className='max-w-[550px]'>
-                        Why should I not go to an agency directly?
-                        </div>
-                    
-                        <div className='flex items-center cursor-pointer' onClick={() =>{svg4 ? Setsvg4(false) : Setsvg4(true)}} >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d={ svg4 ? "M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" 
-                                        : "M5 11V13H19V11H5Z"
-                                        } fill="black"  />
-                        </svg>
-                        </div>
-                        
-                    </div>
-                    <div className={ svg4 ? 'font-manrope text-[15px] font-normal text-[#617275] py-6 hidden'
-                                        :   'font-manrope text-[15px] font-normal text-[#617275] py-6 '}>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, minus. Cupiditate porro repellat, impedit unde architecto officia aspernatur aliquid sequi tenetur rem itaque eius delectus blanditiis voluptatum eligendi mollitia quisquam?
-                    </div>
-                </div>
+                <FAQs question={"What's the guarantee that I will be satisfied with the hired talent?"} answer={"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, minus. Cupiditate porro repellat, impedit unde architecto officia aspernatur aliquid sequi tenetur rem itaque eius delectus blanditiis voluptatum eligendi mollitia quisquam"} />
 
-                <div className='border-[#D7D7D7] border-b-2'>
-                    <div className=' flex justify-between	pb-4 mt-[30px] b'>
-                        <div className='max-w-[550px]'>
-                        Who can help me pick a right skillset
-                        and duration for me?
-                        </div>
-                    
-                        <div className='flex items-center cursor-pointer' onClick={() =>{svg5 ? Setsvg5(false) : Setsvg5(true)}} >
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d={ svg5 ? "M6 6V0H8V6H14V8H8V14H6V8H0V6H6Z" 
-                                        : "M5 11V13H19V11H5Z"
-                                        } fill="black"  />
-                        </svg>
-                        </div>
-                        
-                    </div>
-                    <div className={ svg5 ? 'font-manrope text-[15px] font-normal text-[#617275] py-6 hidden'
-                                        :   'font-manrope text-[15px] font-normal text-[#617275] py-6 '}>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, minus. Cupiditate porro repellat, impedit unde architecto officia aspernatur aliquid sequi tenetur rem itaque eius delectus blanditiis voluptatum eligendi mollitia quisquam?
-                    </div>
-                </div>
+                <FAQs question={"Can I hire multiple talents at once?"} answer={"If unhappy with a project, communicate with the freelancer, allow for revisions, and refer to the agreement. Escalate to platform support if needed, considering mediation. Review policies, seek collaborative solutions for resolution."}/>
+
+                <FAQs question={"Why should I not go to an agency directly?"} answer={"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, minus. Cupiditate porro repellat, impedit unde architecto officia aspernatur aliquid sequi tenetur rem itaque eius delectus blanditiis voluptatum eligendi mollitia quisquam"}/>
+
+                <FAQs question={"Who can help me pick a right skillset?"} answer={"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, minus. Cupiditate porro repellat, impedit unde architecto officia aspernatur aliquid sequi tenetur rem itaque eius delectus blanditiis voluptatum eligendi mollitia quisquam"}/>
                 
             </div>
         </div> 
